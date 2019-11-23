@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+/* MENU LATERAL */
+.barraLateral{
+    width: 20vw;
+    min-height: 90vh;
+    background: white;
+    float: left;
+    border-right: 1px solid rgba(130, 130, 130, 0.3);
+}
+.barraLateral .titleBarraLateral{
+    background: #C9302C;
+    padding: 20px;
+    height: 10vh;
+}
+.barraLateral .titleBarraLateral h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+}
+
+.barraLateral .menuNavegacion{
+    height: 80vh;
+    background: white;
+}
+.barraLateral .menuNavegacion .datosUsuario{
+    height: 15vh;
+    background: grey;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.barraLateral .menuNavegacion .datosUsuario picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barraLateral .menuNavegacion .datosUsuario picture img{
+    width: 65%;
+    border-radius: 50%;
+}
+
+/*--------------------------*/
+
+.main{
+    width: 80vw;
+    height: 90vh;
+    background: white;
+    float: left;
+}
+.footer{
+    width: 100vw;
+    height: 10vh;
+    background: #474747;
+    display: block;
+    float: left;
+}
