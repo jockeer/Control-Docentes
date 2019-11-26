@@ -11,15 +11,66 @@
 <body>
     <section class="barraLateral">
         <div class="titleBarraLateral">
-            <h1>Titulo</h1>
+            <h1>Lab. Sistemas</h1>
         </div>
         <nav class="menuNavegacion">
             <div class="datosUsuario">
                 <picture>
-                    <img src="../img/dan.jpg" alt="">
+                    <img id="imgUsuLog" src="" alt="">
                 </picture>
-                <h3 id="nombreusuario"></h3>
+                <div class="nombreContainer">
+                    <h2>Auxiliar</h2>
+                    <h3 id="nombreusuario"></h3>
+                    
+                </div>
             </div>
+            <ul class="listaOpciones">
+                <li>
+                        <a href=""><span><img src="../img/clock.png" alt=""></span>Turnos</a>
+                        <ul class="submenu">
+                                <li>
+                                    <a href="turno1.html" class="" id="turno1"><span><img src="../img/subclock.png" alt=""></span>07:00 / 10:00</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>10:15 / 12:45</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>13:00 / 15:45</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>16:00 / 18:45</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>19:00 / 21:45</a>
+                                </li>
+    
+                            </ul>
+                </li>
+                <li>
+
+                        <a href=""><span><img src="../img/list.png" alt=""></span>Asignaciones</a>
+                        <ul class="submenu">
+                                <li>
+                                    <a href="#" class="" id="btnPrestamo">07:00 / 10:00</a>
+                                </li>
+                                
+    
+                            </ul>
+                </li>
+                <li>
+
+                        <a href=""><span><img src="../img/handshake.png" alt=""></span>Prestamos</a>
+                        <ul class="submenu">
+                                <li>
+                                    <a href="#" class="" id="btnPrestamo">07:00 / 10:00</a>
+                                </li>
+                                
+    
+                            </ul>
+                </li>
+            
+
+            </ul>
         </nav>
     </section>
     <main class="main">
@@ -30,5 +81,7 @@
     <script src="../js/js/jquery-3.4.1.min.js"></script>
     <script src="../js/js/bootstrap.min.js"></script>
     <script src="../js/home.js"></script>
+    <script src="../js/menuLateral.js"></script>
+    <script src="../js/navegacionTurnos.js"></script>
 </body>
 </html>

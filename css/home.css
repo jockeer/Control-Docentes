@@ -4,8 +4,9 @@
 }
 body{
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /* MENU LATERAL */
 .barraLateral{
@@ -30,34 +31,89 @@ body{
 }
 
 .barraLateral .menuNavegacion{
-    height: 80vh;
+
     background: white;
+}
+
+.barraLateral .menuNavegacion .listaOpciones li a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #474747;
+}
+.barraLateral .menuNavegacion .listaOpciones li a:hover{
+    background: rgb(248, 248, 248) url('../img/bdMenu.png') no-repeat;
+    border-bottom: 1px solid rgba(248, 248, 248,.3);
+    background-size: auto 100%;
+    background-position-x: right;
+    box-sizing: border-box;
+}
+.barraLateral .menuNavegacion .listaOpciones li span{
+    margin-right: 10px;
 }
 .barraLateral .menuNavegacion .datosUsuario{
     height: 15vh;
-    background: grey;
     padding: 15px 20px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 40% 60%;
+    margin-bottom: 20px;
 }
-.barraLateral .menuNavegacion .datosUsuario picture{
+.submenu{
+    display: none;
+}
+.barraLateral .menuNavegacion .datosUsuario .nombreContainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+.barraLateral .menuNavegacion .datosUsuario .nombreContainer h2{
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: #474747;
+    
+}
+.barraLateral .menuNavegacion .datosUsuario .nombreContainer h3{
+    margin: 0;
+    color: #474747;
+    font-size: 16px;
+    
+}
+.barraLateral .menuNavegacion .datosUsuario picture{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .barraLateral .menuNavegacion .datosUsuario picture img{
-    width: 65%;
+    width: 90%;
     border-radius: 50%;
+    border: 1px solid rgba(130, 130, 130, 0.3)
 }
 
 /*--------------------------*/
 
+
+/*PARTE PRINCIPAL*/
 .main{
-    width: 80vw;
-    height: 90vh;
-    background: white;
+    width: 60vw;
+    /* height: 90vh; */
+    background: rgb(246, 246, 246);
     float: left;
+    padding: 20px;
 }
+
+
+/*-------------------*/
+
+/*PARTE PENDIENTES*/
+.pendientes{
+   width: 20vw;
+   /* height: 90vh; */
+   background:white;
+   float: left; 
+}
+/*------*/
 .footer{
     width: 100vw;
     height: 10vh;

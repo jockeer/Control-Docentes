@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/turnos.css">
+    <title>Turno1 / Utepsa</title>
+</head>
+<body>
+    <section class="barraLateral">
+        <div class="titleBarraLateral">
+            <h1>Lab. Sistemas</h1>
+        </div>
+        <nav class="menuNavegacion">
+            <div class="datosUsuario">
+                <picture>
+                    <img id="imgUsuLog" src="" alt="">
+                </picture>
+                <div class="nombreContainer">
+                    <h2>Auxiliar</h2>
+                    <h3 id="nombreusuario"></h3>
+                    
+                </div>
+            </div>
+            <ul class="listaOpciones">
+                <li>
+                    <a href=""><span><img src="../img/clock.png" alt=""></span>Turnos</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="turno1.html" class="" id="turno1"><span><img src="../img/subclock.png" alt=""></span>07:00 / 10:00</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>10:15 / 12:45</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>13:00 / 15:45</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>16:00 / 18:45</a>
+                        </li>
+                        <li>
+                            <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>19:00 / 21:45</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href=""><span><img src="../img/list.png" alt=""></span>Asignaciones</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="" id="btnPrestamo">07:00 / 10:00</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href=""><span><img src="../img/handshake.png" alt=""></span>Prestamos</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="" id="btnPrestamo">07:00 / 10:00</a>
+                        </li>                              
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <main class="main">
+        <h2>Laboratorios</h2>
+        <hr>
+        <div class="cotainerAulas">
+            <div class="card">
+                <div class="card-header">N-200</div>
+                <div class="card-body">
+                    <div class="datos">
+                        <h5>Nombre:</h5>
+                        <h6>Daniel Guillermo Gorianz</h6>
+                        <h5>Materia:</h5>
+                        <h6>Desarrollo de Aplicaciones VI</h6>
+                        <h5>Cantidad de Estudiantes:</h5>
+                        <h6>20</h6>
+                    </div>
+                    <figure>
+                        <img src="../img/dan.jpg" alt="">
+
+                    </figure>
+                    
+                </div>
+                <div class="card-footer">
+                    <button class="btn">Ingreso</button>
+                    <button class="btn">Salida</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">N-200</div>
+                <div class="card-body">
+                    <div class="datos">
+                        <h5>Nombre:</h5>
+                        <h6>Daniel Guillermo Gorianz</h6>
+                        <h5>Materia:</h5>
+                        <h6>Desarrollo de Aplicaciones VI</h6>
+                        <h5>Cantidad de Estudiantes:</h5>
+                        <h6>20</h6>
+                    </div>
+                    <figure>
+                        <img src="../img/dan.jpg" alt="">
+
+                    </figure>
+                    
+                </div>
+                <div class="card-footer">
+                    <button class="btn">Ingreso</button>
+                    <button class="btn">Salida</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">N-200</div>
+                <div class="card-body">
+                    <div class="datos">
+                        <h5>Nombre:</h5>
+                        <h6>Daniel Guillermo Gorianz</h6>
+                        <h5>Materia:</h5>
+                        <h6>Desarrollo de Aplicaciones VI</h6>
+                        <h5>Cantidad de Estudiantes:</h5>
+                        <h6>20</h6>
+                    </div>
+                    <figure>
+                        <img src="../img/dan.jpg" alt="">
+
+                    </figure>
+                    
+                </div>
+                <div class="card-footer">
+                    <button class="btn">Ingreso</button>
+                    <button class="btn">Salida</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section class="pendientes">
+        <h3>Avisos</h3>
+        <hr>
+        <!-- <form action="" onsubmit="return false;"> -->
+        <form action="" >
+            <textarea placeholder="Escribir..." id="comentario" class="comentarios" name="" cols="30" rows="2"></textarea>
+                
+            <button id="agregarComentario" type="submit" class="btn btnEnviarMesaje"><img src="../img/send.png" alt=""></button>
+        </form>
+        <div id="containerAvisos" class="containerAvisos">
+            <!--ACA SE CARGAN LOS MENSAJES DE LOS AUXILIARES-->
+        </div>
+        </section>
+    <footer class="footer"></footer>
+
+    <script src="../js/js/jquery-3.4.1.min.js"></script>
+    <script src="../js/js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/menuLateral.js"></script>
+    <script src="../js/navegacionTurnos.js"></script>
+    <script src="../js/comentarios.js"></script>
+</body>
+</html>

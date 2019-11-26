@@ -9,23 +9,97 @@
     <title>Log In / Utepsa</title>
 </head>
 <body>
+  <div id="overlayUser" class="overlayUser"></div>
+  <div id="modalNewUser" class="modalNewUser">
     <div class="card">
-        <div class="card-body">
+      <h2>Nuevo Usuario</h2>
+      <div class="card-body">
+        <form action="">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                </div>
+                <input type="text" id="nuevoNombre" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
+                </div>
+                <input type="text" id="nuevoApellido" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Telefono</span>
+                </div>
+                <input type="number" id="nuevoTelefono" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                </div>
+                <input type="text" id="nuevoEmail" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Usuario</span>
+                </div>
+                <input type="text" id="nuevoUsuario" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Contraseña</span>
+                </div>
+                <input type="password" id="nuevoPassword" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Rol</span>
+                </div>
+                <select name="" id="nuevoRol">
+                  <option value="1">Aux. Administrativo</option>
+                  <option value="2">Aux. Beca</option>
+                </select>
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text containerFiles" id="inputGroup-sizing-sm">Cargar Foto</span>
+                  <input type="file" class="files" id="files">
+                </div>
+              <img id="imgss" class="imgss" height="100">
+
+            </div>
+              <div class="containerButton">
+                <button id="btnRegistrar" type="submit" class="btnRegistrar">Registrar</button>
+                <button id="btnCancelar" type="button" class="btnCancelar">Cancelar</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+      <div class="card-body">
+          <img src="img/logilo.png" width="200" alt="">
             <form action="" onsubmit="return false;">
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-sm">Usuario</span>
+                      <span class="input-group-text" id="inputGroup-sizing-sm"><img src="img/user-black-close-up-shape.png" alt=""> Usuario</span>
                     </div>
-                    <input type="text" id="usu" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <input type="text" id="usu" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                   </div>
                 <div class="input-group input-group-sm mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-sm">Contraseña</span>
+                      <span class="input-group-text" id="inputGroup-sizing-sm"><img src="img/lock.png" alt=""> Contraseña</span>
                     </div>
-                    <input type="text" id="pass" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <input type="password" id="pass" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                   </div>
-                  <button id="LogIn" type="submit" class="btn btn-primary">Log In</button>
-            </form>
+                  <div class="containerButton">
+                    <button id="LogIn" type="submit" class="btnLogIn">Log In</button>
+                  </div>
+              </form>
+        </div>
+        <div class="card-footer">
+              <button id="NewUser" type="button" class="NewUser">Registrar nuevo</button>
+              
         </div>
     </div>
     <script src="js/js/jquery-3.4.1.min.js"></script>
