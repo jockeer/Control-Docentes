@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/regDocente.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="barraLateral">
+        <div class="titleBarraLateral">
+            <h1>Lab. Sistemas</h1>
+        </div>
+        <nav class="menuNavegacion">
+            <div class="datosUsuario">
+                <picture>
+                    <img id="imgUsuLog" src="" alt="">
+                </picture>
+                <div class="nombreContainer">
+                    <h2>Auxiliar</h2>
+                    <h3 id="nombreusuario"></h3>
+                    
+                </div>
+            </div>
+            <ul class="listaOpciones">
+                <li>
+                        <a href=""><span><img src="../img/clock.png" alt=""></span>Turnos</a>
+                        <ul class="submenu">
+                                <li>
+                                    <a href="turno1.html" class="" id="turno1"><span><img src="../img/subclock.png" alt=""></span>07:00 / 10:00</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>10:15 / 12:45</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>13:00 / 15:45</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>16:00 / 18:45</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>19:00 / 21:45</a>
+                                </li>
+    
+                            </ul>
+                </li>
+                <li>
+
+                        <a href=""><span><img src="../img/list.png" alt=""></span>Asignaciones</a>
+                        <ul class="submenu">
+                                <li>
+                                    <a href="regDocente.html" class="" id="regDocente"><img src="../img/educator.png" alt="">Registrar Docente</a>
+                                    <a href="#" class="" id="btnPrestamo"><img src="../img/books.png" alt="">Registrar Materia</a>
+                                </li>
+                                
+    
+                            </ul>
+                </li>
+                <li>
+
+                        <a href=""><span><img src="../img/handshake.png" alt=""></span>Prestamos</a>
+                        <ul class="submenu">
+                                <li>
+                                    <a href="#" class="" id="btnPrestamo">07:00 / 10:00</a>
+                                </li>
+                                
+    
+                            </ul>
+                </li>
+            
+
+            </ul>
+        </nav>
+    </section>
+    <main class="main">
+        <div id="overlayAddDocente" class="overlayAddDocente"></div>
+        <div id="modalAddDocente" class="modalAddDocente">
+            <div class="card">
+                <div class="card-header">Reg Docente</div>
+                <div class="card-body">
+                        <form action="" >
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+                                    </div>
+                                    <input type="text" id="nuevoNombreDocente" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                  </div>
+
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroup-sizing-sm">Telefono</span>
+                                    </div>
+                                    <input type="number" id="nuevoTelefonoDocente" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+                                    </div>
+                                    <input type="text" id="nuevoEmailDocente" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text containerFiles" id="inputGroup-sizing-sm">Cargar Foto</span>
+                                      <input type="file" class="files" id="fileDocente">
+                                    </div>
+                                  <img id="imgDocente" class="imgss" height="100">
+                    
+                                </div>
+                                  <div class="containerButton">
+                                    <button id="btnRegistrarDocente" type="submit" class="btnRegistrar">Registrar</button>
+                                    <button id="btnCancelarDocente" type="button" class="btnCancelar">Cancelar</button>
+                                  </div>
+                              </form>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Reg Docente</h1>
+            <div id="containerDocentes" class="containerDocentes">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Nombre Docente</h5>
+                    </div>
+                    <div class="card-body cardDocente">
+                        <img src="../img/dan.jpg" alt="">
+                        <div class="datosDocentes">
+                            <h5>Telefono:</h5>
+                            <h6>76597228</h6>
+                            <h5>Email:</h5>
+                            <h6>aalbaafikaa@gmail.com</h6>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <button id="btnAddDocente" class="btnNewDoc"><img src="../img/addDocente.png" alt=""></button>
+    </main>
+    <footer class="footer"></footer>
+
+    <script src="../js/js/jquery-3.4.1.min.js"></script>
+    <script src="../js/js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/menuLateral.js"></script>
+    <script src="../js/navegacionTurnos.js"></script>
+    <script src="../js/regDocente.js"></script>
+    <script src="../js/cargarDocentes.js"></script>
+</body>
+</html>

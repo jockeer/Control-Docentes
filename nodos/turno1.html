@@ -50,7 +50,8 @@
                     <a href=""><span><img src="../img/list.png" alt=""></span>Asignaciones</a>
                     <ul class="submenu">
                         <li>
-                            <a href="#" class="" id="btnPrestamo">07:00 / 10:00</a>
+                            <a href="regDocente.html" class="" id="regDocente"><img src="../img/educator.png" alt="">Registrar Docente</a>
+                            <a href="#" class="" id="btnPrestamo"><img src="../img/books.png" alt="">Registrar Materia</a>
                         </li>
                     </ul>
                 </li>
@@ -66,7 +67,15 @@
         </nav>
     </section>
     <main class="main">
-        <h2>Laboratorios</h2>
+        <div class="containerHeaderMain">
+            <h2>Laboratorios</h2>
+
+            <div class="opcionesAddEliminar">
+                <img id="addProgramacion" src="../img/addProgramacion2.png" alt="">
+                <img src="../img/removeProgramacion2.png" alt="">
+                <img src="../img/refreshProgramacion.png" alt="">
+            </div>
+        </div>
         <hr>
         <div class="cotainerAulas">
             <div class="card">
@@ -137,6 +146,151 @@
             </div>
         </div>
     </main>
+    <!--PARTE PARA AGREGAR A LOS NUEVA ASIGANCION-->
+    <div id="overlayAddAsig" class="overlayAddAsig">
+        
+    </div>
+    <div id="modalAddAsig" class="modalAddAsig">
+        <div class="card ProgMateria">
+            <div id="overlaypromat" class="overlaypromat"></div>
+            <div class="card-header">
+                <h2>Programar Materia</h2>
+            </div>
+            <div class="card-body">
+                    <form action="" onsubmit="return false;">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Semestre Programado</span>
+                                </div>
+                                <select class="form-control" name="" id="SemetreProgramado">
+                                  <option value="1">Semestre 1</option>
+                                  <option value="2">Semestre 2</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Modulo Programado</span>
+                                </div>
+                                <select class="form-control" name="" id="ModuloProgramado">
+                                  <option value="1">Modulo 1</option>
+                                  <option value="2">Modulo 2</option>
+                                  <option value="3">Modulo 3</option>
+                                  <option value="4">Modulo 4</option>
+                                  <option value="5">Modulo 5</option>
+                                  <option value="0">Modulo 0</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Grupo</span>
+                                </div>
+                                <input type="text" id="GrupoProgramado" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Turno Programado</span>
+                                </div>
+                                <select class="form-control" name="" id="TurnoProgramado">
+                                  <option value="1">Turno 1 (7:00 - 10:00)</option>
+                                  <option value="2">Turno 2 (10:15 - 13:00)</option>
+                                  <option value="3">Turno 3 (13:00 - 16:00)</option>
+                                  <option value="4">Turno 4 (16:00 - 19:00)</option>
+                                  <option value="5">Turno 5 (19:15 - 21:45)</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad de Estudiantes</span>
+                                </div>
+                                <input type="number" id="CantidadProgramada" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Nombre del Docente</span>
+                                </div>
+                                <select class="form-control" name="" id="nombresdeDocentes">
+                                </select>
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Nombre de Materia</span>
+                                </div>
+                                <select class="form-control" name="" id="nombresdeMaterias">
+                                  
+                                </select>
+                            </div>
+
+                              <div class="containerButton">
+                                <button id="btnRegProgramacionMateria" type="submit" class="btnRegistrar">Registrar</button>
+                                <button id="" type="button" class="btnCancelar">Cancelar</button>
+                                <button id="btnSiguiente" type="button" class="btnCancelar">Siguiente</button>
+                              </div>
+                          </form>
+            </div>
+        </div>
+        <div class="card AsigLab">
+            <div id="overlayasiglab" class="overlayasiglab"></div>
+            <div class="card-header asig">
+                <h2>Asignar Lab.</h2>
+                <img id="btnRefreshAsig" src="../img/refresh.png" alt="">
+            </div>
+            <div class="card-body">
+                    <form action="" onsubmit="return false;">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Semestre</span>
+                                </div>
+                                <input type="number" id="semestreAsignado" disabled required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                              </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Modulo</span>
+                                </div>
+                                <input type="number" id="" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Turno</span>
+                                </div>
+                                <input type="number" id="" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Fecha de Inicio</span>
+                                </div>
+                                <input type="date" id="fechaInicioSeleccionada" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Fecha Fin</span>
+                                </div>
+                                <input type="date" id="" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Laboratorios Disponibles</span>
+                                </div>
+                                <input type="password" id="" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-sm">Prog. Materias</span>
+                                </div>
+                                <select class="form-control" name="" id="contarinerProgramacion">
+                                  
+                                </select>
+                            </div>
+
+                              <div class="containerButton">
+                                <button id="btnAnterior" type="button" class="btnRegistrar">Anterior</button>
+                                <button id="btnRegistrarAsignacion" type="submit" class="btnRegistrar">Registrar</button>
+                                <button id="" type="button" class="btnCancelar">Cancelar</button>
+                              </div>
+                          </form>
+            </div>
+        </div>
+        
+    </div>
     <section class="pendientes">
         <h3>Avisos</h3>
         <hr>
@@ -158,5 +312,8 @@
     <script src="../js/menuLateral.js"></script>
     <script src="../js/navegacionTurnos.js"></script>
     <script src="../js/comentarios.js"></script>
+    <script src="../js/botonesProgramacion.js"></script>
+    <script src="../js/botonesAsignacion.js"></script>
+    <script src="../js/cargarDatos.js"></script>
 </body>
 </html>

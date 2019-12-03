@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    /* height: 100vh; */
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* MENU LATERAL */
+.barraLateral{
+    width: 20vw;
+    min-height: 90vh;
+    background: white;
+    float: left;
+    border-right: 1px solid rgba(130, 130, 130, 0.3);
+}
+.barraLateral .titleBarraLateral{
+    background: #C9302C;
+    padding: 20px;
+    height: 10vh;
+}
+.barraLateral .titleBarraLateral h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+}
+
+.barraLateral .menuNavegacion{
+
+    background: white;
+}
+
+.barraLateral .menuNavegacion .listaOpciones li a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #474747;
+}
+.barraLateral .menuNavegacion .listaOpciones li a:hover{
+    background: rgb(248, 248, 248) url('../img/bdMenu.png') no-repeat;
+    border-bottom: 1px solid rgba(248, 248, 248,.3);
+    background-size: auto 100%;
+    background-position-x: right;
+    box-sizing: border-box;
+}
+.barraLateral .menuNavegacion .listaOpciones li span{
+    margin-right: 10px;
+}
+.barraLateral .menuNavegacion .datosUsuario{
+    height: 15vh;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-bottom: 20px;
+}
+.submenu{
+    display: none;
+}
+.barraLateral .menuNavegacion .datosUsuario .nombreContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.barraLateral .menuNavegacion .datosUsuario .nombreContainer h2{
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    color: #474747;
+    
+}
+.barraLateral .menuNavegacion .datosUsuario .nombreContainer h3{
+    margin: 0;
+    color: #474747;
+    font-size: 16px;
+    
+}
+.barraLateral .menuNavegacion .datosUsuario picture{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.barraLateral .menuNavegacion .datosUsuario picture img{
+    width: 90%;
+    border-radius: 50%;
+    border: 1px solid rgba(130, 130, 130, 0.3)
+}
+
+/*--------------------------*/
+
+
+/*PARTE PRINCIPAL*/
+.main{
+    width: 80vw;
+    height: 90vh;
+    background: rgb(246, 246, 246);
+    float: left;
+    padding: 20px;
+    position: relative;
+}
+.main .overlayAddDocente{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+.main .overlayAddDocente.active{
+    visibility: visible;
+    opacity: 1;
+
+    
+}
+.main .modalAddDocente{
+    position: fixed;
+    z-index: 11;
+    top: 20vh;
+    left: 40vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    
+}
+.main .modalAddDocente.active{
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.main .btnNewDoc{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    border-radius: 50%;
+    /* padding: 10px; */
+    outline: 0;
+    width: 100px;
+    height: 100px;
+    border: 0;
+    box-shadow: inset 0 -.2em 8px #474747;
+    transition: .3s;
+    will-change: transform;
+    background: white;
+}
+.main .btnNewDoc:active{
+    transform: scale(.9);
+}
+.main .container .containerDocentes{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 5px;
+    row-gap: 20px;
+}
+.main .container .containerDocentes .card .card-header{
+    text-align: center;
+}
+.main .container .containerDocentes .card .card-body.cardDocente{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 10px;
+    column-gap: 10px;
+}
+.main .container .containerDocentes .card .card-body.cardDocente img{
+    width: 100%;
+    border-radius: 20px;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .datosDocentes h6{
+    font-size: 12px;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .datosDocentes h5{
+    font-size: 14px;
+    font-weight: bold;
+}
+.main .container .containerDocentes .card .card-header h5{
+    margin: 0;
+}
+
+
+/*-------------------*/
+
+/*PARTE PENDIENTES*/
+
+/*------*/
+.footer{
+    width: 100vw;
+    height: 10vh;
+    background: #474747;
+    display: block;
+    float: left;
+}

@@ -51,7 +51,7 @@ function getUrl() {
       debugger
     var FR= new FileReader();
     FR.addEventListener("load", function(e) {
-      document.getElementById("imgss").src  = e.target.result;
+      document.getElementById("imgDocente").src  = e.target.result;
       foto = e.target.result;
     }); 
     
