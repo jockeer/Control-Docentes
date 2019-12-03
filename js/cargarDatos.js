@@ -55,3 +55,4 @@
     const $containerMaterias = document.getElementById('nombresdeMaterias')
     renderMateriaList($listaMaterias, $containerMaterias)
 })();
+

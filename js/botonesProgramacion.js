@@ -6,7 +6,7 @@ $overlayasiglab = document.getElementById('overlayasiglab');
 $modalAddAsig = document.getElementById('modalAddAsig');
 $addProgramacion = document.getElementById('addProgramacion');
 $btnRegProgramacionMateria = document.getElementById('btnRegProgramacionMateria');
-$btnRegistrarAsignacion = document.getElementById('btnRegistrarAsignacion');
+
 $btnRefreshAsig = document.getElementById('btnRefreshAsig');
 
 let fotosdeGaleria = document.getElementsByClassName('hola')
@@ -45,6 +45,35 @@ async function cargarProgramacion(semestreprog,moduloprog,turno_prog){
     const $containerDocentes = document.getElementById('contarinerProgramacion')
     debugger
     renderDocenteList($listaProgramacion, $containerDocentes)
+}
+
+async function cargarlab(semestre,modulo,turno){
+    async function getMateria(url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    }
+    const $listaMaterias= await getMateria(`http://localhost:3000/api/obtenerLaboratoriosLibres/${semestre}/${modulo}/${turno}`);
+    debugger
+    function MateriaItemTemplate(materia){
+        return `<option value="${materia.codlab}">${materia.lab}</option>`;
+    }
+    function createTemplate(HTMLString){
+        const $html = document.implementation.createHTMLDocument();
+        $html.body.innerHTML = HTMLString;
+        return $html.body.children[0];
+    }
+    
+    function renderMateriaList(listMateria, $container){
+        listMateria.data.forEach(materia => {
+            
+          const HTMLString = MateriaItemTemplate(materia);
+          const materiaElement = createTemplate(HTMLString);       
+          $container.append(materiaElement);
+        });    
+    }
+    const $containerMaterias = document.getElementById('containerLab')
+    renderMateriaList($listaMaterias, $containerMaterias)
 }
 
 $addProgramacion.addEventListener('click',()=>{
@@ -98,12 +127,12 @@ $btnRegProgramacionMateria.addEventListener('click',()=>{
     
 })
 
-$btnRegistrarAsignacion.addEventListener('click',()=>{
-    alert(document.getElementById('fechaInicioSeleccionada').value)
-})
+
 
 $btnRefreshAsig.addEventListener('click',()=>{
-    $('#semestreAsignado').prop('disabled',false)
+    // $('#semestreAsignado').prop('disabled',false)
+    cargarProgramacion(document.getElementById('semestreAsignado').value,document.getElementById('moduloAsignado').value,document.getElementById('turnoAsignado').value)
+    cargarlab(document.getElementById('semestreAsignado').value,document.getElementById('moduloAsignado').value,document.getElementById('turnoAsignado').value)
     // document.getElementById('semestreAsignado').disabled=false
 })
 
