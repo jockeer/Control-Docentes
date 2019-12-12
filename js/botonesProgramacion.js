@@ -10,6 +10,7 @@ $btnRegProgramacionMateria = document.getElementById('btnRegProgramacionMateria'
 $btnRefreshAsig = document.getElementById('btnRefreshAsig');
 
 let fotosdeGaleria = document.getElementsByClassName('hola')
+let fotosdeGaleria2 = document.getElementsByClassName('hola2')
 
 let date = new Date();
 let year = date.getFullYear();
@@ -43,7 +44,6 @@ async function cargarProgramacion(semestreprog,moduloprog,turno_prog){
         });    
     }
     const $containerDocentes = document.getElementById('contarinerProgramacion')
-    debugger
     renderDocenteList($listaProgramacion, $containerDocentes)
 }
 
@@ -53,10 +53,14 @@ async function cargarlab(semestre,modulo,turno){
         const data = await response.json();
         return data;
     }
+    for(let i = document.getElementById('containerLab').children.length - 1 ; i >=0 ; i--){
+        document.getElementById('containerLab').removeChild(fotosdeGaleria[i])
+
+    }
     const $listaMaterias= await getMateria(`http://localhost:3000/api/obtenerLaboratoriosLibres/${semestre}/${modulo}/${turno}`);
     debugger
     function MateriaItemTemplate(materia){
-        return `<option value="${materia.codlab}">${materia.lab}</option>`;
+        return `<option class="hola2" value="${materia.codlab}">${materia.lab}</option>`;
     }
     function createTemplate(HTMLString){
         const $html = document.implementation.createHTMLDocument();

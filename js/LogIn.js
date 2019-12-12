@@ -18,6 +18,7 @@ async function logear(nombreUsuario, passUsuario){
         localStorage.setItem('usuario',`${$listaRoles.data[0].nombre} ${$listaRoles.data[0].apellido_p}`);
         localStorage.setItem('idUsuario',`${$listaRoles.data[0].codusu}`);
         localStorage.setItem('foto',`${$listaRoles.data[0].foto}`);
+        localStorage.setItem('rol',`${$listaRoles.data[0].codrol}`);
         location.href="nodos/home.html";
     }else{
         alert(`Usuario o contraseña Incorrectos`)

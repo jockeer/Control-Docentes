@@ -4,3 +4,6 @@ $('#turno1').on('click',()=>{
 $('#regDocente').on('click',()=>{
     location.href='regDocente.html'
 })
+$('#btnReservas').on('click',()=>{
+    location.href='reservas.html'
+})

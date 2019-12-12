@@ -97,7 +97,7 @@ body{
 /*PARTE PRINCIPAL*/
 .main{
     width: 80vw;
-    height: 90vh;
+    /* height: 90vh; */
     background: rgb(246, 246, 246);
     float: left;
     padding: 20px;
@@ -138,8 +138,8 @@ body{
 }
 
 .main .btnNewDoc{
-    position: absolute;
-    bottom: 50px;
+    position: fixed;
+    bottom: 30px;
     right: 50px;
     border-radius: 50%;
     /* padding: 10px; */
@@ -157,30 +157,68 @@ body{
 }
 .main .container .containerDocentes{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    column-gap: 5px;
-    row-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 25px;
+    row-gap: 25px;
+
 }
 .main .container .containerDocentes .card .card-header{
     text-align: center;
     background: #C9302C;
 }
+.main .container .containerDocentes .card img{
+    position: absolute;
+    bottom: -10%;
+    width: 50%;
+    right: -15%;
+    opacity: .6;
+    transform: rotate(-30deg);
+    z-index: 2;
+}
 .main .container .containerDocentes .card .card-body.cardDocente{
     display: grid;
-    grid-template-columns: 40% 60%;
-    padding: 10px;
-    column-gap: 10px;
+    grid-template-columns: 30% 70%;
+
+    padding: 0px;
 }
-.main .container .containerDocentes .card .card-body.cardDocente img{
-    width: 100%;
-    border-radius: 20px;
-}
-.main .container .containerDocentes .card .card-body.cardDocente .datosDocentes h6{
+
+.main .container .containerDocentes .card .card-body.cardDocente h6{
     font-size: 12px;
+    margin: 0;
+    padding: 10px;
 }
-.main .container .containerDocentes .card .card-body.cardDocente .datosDocentes h5{
-    font-size: 14px;
+.main .container .containerDocentes .card .card-body.cardDocente h5{
+    font-size: 12px;
     font-weight: bold;
+    background: #d5d5d5;
+    margin: 0;
+    padding: 10px;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .condicion{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .condicion button{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: inset 0px -.2em 5px rgba(130, 130, 130, 0.3);
+    outline: 0;
+    transition: .3s;
+    will-change: transform;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .condicion .aprobar{
+    background: rgb(78, 201, 44);
+    color: white;
+    font-weight: bold;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .condicion .reprobar{
+    background: #C9302C;
+    color: white;
+    font-weight: bold;
+}
+.main .container .containerDocentes .card .card-body.cardDocente .condicion button:active{
+    transform: scale(.9);
 }
 .main .container .containerDocentes .card .card-header h5{
     margin: 0;
