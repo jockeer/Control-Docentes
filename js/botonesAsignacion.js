@@ -2,16 +2,21 @@ $btnRegistrarAsignacion = document.getElementById('btnRegistrarAsignacion');
 let dates = new Date();
 let years = dates.getFullYear();
 
-(async function lista(){
+let fotosdeGa = document.getElementsByClassName('holl')
+
+async function lista(turno){
     async function getLista(url) {
         const response = await fetch(url);
         const data = await response.json();
         return data;
     }
-    const $Lista= await getLista(`http://localhost:3000/api/obtenerLista`);
-    debugger
+    for(let i = document.getElementById('containerAulas').children.length - 1 ; i >=0 ; i--){
+        document.getElementById('containerAulas').removeChild(fotosdeGa[i])
+
+    }
+    const $Lista= await getLista(`http://localhost:3000/api/obtenerLista/${turno}`);
     function MateriaItemTemplate(Lista){
-        return `<div class="card">
+        return `<div class="card holl">
                 <div class="card-header">${Lista.lab}</div>
                 <div class="card-body">
                     <div class="datos">
@@ -50,9 +55,9 @@ let years = dates.getFullYear();
     }
     const $containerAulas = document.getElementById('containerAulas')
     renderMateriaList($Lista, $containerAulas)
-})();
+}
 
-
+lista(1)
 
 $btnRegistrarAsignacion.addEventListener('click',()=>{
     alert(document.getElementById('fechaInicioSeleccionada').value)
@@ -80,4 +85,27 @@ $btnRegistrarAsignacion.addEventListener('click',()=>{
     .catch(error => console.error('Error:', error))
     .then(response => alert('Registrado la Asignacion'));
 })
+
+const $Turno1=document.getElementById('Turno1')
+const $Turno2=document.getElementById('Turno2')
+const $Turno3=document.getElementById('Turno3')
+const $Turno4=document.getElementById('Turno4')
+const $Turno5=document.getElementById('Turno5')
+
+$Turno1.addEventListener('click',()=>{
+    lista(1)
+})
+$Turno2.addEventListener('click',()=>{
+    lista(2)
+})
+$Turno3.addEventListener('click',()=>{
+    lista(3)
+})
+$Turno4.addEventListener('click',()=>{
+    lista(4)
+})
+$Turno5.addEventListener('click',()=>{
+    lista(5)
+})
+
 

@@ -27,7 +27,6 @@
         return $html.body.children[0];
     }
     function addEventClick($element,$comentario) {
-        debugger
         $element.addEventListener('click', () => {
             getComentarios(`http://localhost:3000/api/EliminarComentario/${$comentario.idcomentario}`);
             alert(`comentario Eliminado`)
