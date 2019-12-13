@@ -4,6 +4,43 @@ let years = dates.getFullYear();
 
 let fotosdeGa = document.getElementsByClassName('holl')
 
+function Entrada(codasig){
+    debugger
+    var confirm = alertify.confirm('Asistencia', 'Quiere Marcar la Asistencia?', null, null).set('', { ok: 'ok', cancel: 'Cancel' });
+            //callbak al pulsar botón positivo
+            confirm.set('onok', function () {
+                let $prog=document.getElementById(`progra${codasig}`)
+                
+                alertify.success(`Asistencia Marcada asignacion numero ${codasig}`);
+                $prog.classList.add('asis');
+                
+            });
+            //callbak al pulsar botón negativo
+            confirm.set('oncancel', function () {
+                alertify.error('Asistencia no marcada');
+                
+    })
+
+}
+function Salida(codasig){
+    debugger
+    var confirm = alertify.confirm('Asistencia', 'Quiere Marcar la Salida?', null, null).set('', { ok: 'ok', cancel: 'Cancel' });
+            //callbak al pulsar botón positivo
+            confirm.set('onok', function () {
+                let $prog=document.getElementById(`progra${codasig}`)
+                
+                alertify.success(`Salida Marcada asignacion numero ${codasig}`);
+                $prog.classList.remove('asis');
+                
+            });
+            //callbak al pulsar botón negativo
+            confirm.set('oncancel', function () {
+                alertify.error('Asistencia no marcada');
+                
+    })
+
+}
+
 async function lista(turno){
     async function getLista(url) {
         const response = await fetch(url);
@@ -15,10 +52,11 @@ async function lista(turno){
 
     }
     const $Lista= await getLista(`http://localhost:3000/api/obtenerLista/${turno}`);
+    console.log($Lista)
     function MateriaItemTemplate(Lista){
         return `<div class="card holl">
                 <div class="card-header">${Lista.lab}</div>
-                <div class="card-body">
+                <div id="progra${Lista.codasig}" class="card-body">
                     <div class="datos">
                         <h5>Nombre:</h5>
                         <h6>${Lista.nombredoc}</h6>
@@ -34,8 +72,8 @@ async function lista(turno){
 
                 </div>
                 <div class="card-footer">
-                    <button class="btn">Ingreso</button>
-                    <button class="btn">Salida</button>
+                    <button class="btn" onclick="Entrada(${Lista.codasig});">Ingreso</button>
+                    <button class="btn" onclick="Salida(${Lista.codasig});">Salida</button>
                 </div>
             </div>`;
     }
@@ -43,6 +81,12 @@ async function lista(turno){
         const $html = document.implementation.createHTMLDocument();
         $html.body.innerHTML = HTMLString;
         return $html.body.children[0];
+    }
+    function addEventClick($element,$boton) {
+        $element.addEventListener('click', () => {
+          // alert('click')
+          showModal($visita)
+        })
     }
     
     function renderMateriaList(Lista, $container){
@@ -55,6 +99,8 @@ async function lista(turno){
     }
     const $containerAulas = document.getElementById('containerAulas')
     renderMateriaList($Lista, $containerAulas)
+
+    
 }
 
 lista(1)
@@ -107,5 +153,9 @@ $Turno4.addEventListener('click',()=>{
 $Turno5.addEventListener('click',()=>{
     lista(5)
 })
+
+
+
+
 
 
