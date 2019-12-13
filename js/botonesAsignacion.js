@@ -72,8 +72,9 @@ async function lista(turno){
 
                 </div>
                 <div class="card-footer">
-                    <button class="btn" onclick="Entrada(${Lista.codasig});">Ingreso</button>
-                    <button class="btn" onclick="Salida(${Lista.codasig});">Salida</button>
+                    <button class="btn ingreso" onclick="Entrada(${Lista.codasig});">Ingreso</button>
+                    <button class="btn Salida" onclick="Salida(${Lista.codasig});">Salida</button>
+                    <button class="btn Observaciones" onclick="">Observaciones</button>
                 </div>
             </div>`;
     }
