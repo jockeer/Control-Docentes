@@ -97,11 +97,8 @@
     color: white;
     font-weight: bold;
     box-shadow: none;
-    transition: .3s;
-    will-change: transform;
-}
-.main .cotainerAulas .card .card-footer .btn:active{
-    transform: scale(.9);
+    
+
 }
 .main .cotainerAulas .card .card-footer .btn.ingreso{
     background: rgb(96, 201, 44);
