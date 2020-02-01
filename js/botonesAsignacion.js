@@ -45,15 +45,16 @@ async function RegistrarSalida($codasig){
 
     var t = new Date;
     let fecha = `${t.getFullYear()}-${t.getMonth()+1}-${t.getDate()}`
-
+debugger
 
     async function getLista(url) {
-        
+        debugger
         const response = await fetch(url);
         const data = await response.json();
         return data;
     }
-    const $Lista= await getLista(`http://localhost:3000/api/obtenerAsistencia/${$codasig}/${fecha}`);
+    const $Lista= await getLista(`http://localhost:3000/api/obtenerAsistencia/${$codasig}/'${fecha}'`);
+    debugger
     console.log($Lista)
 
     const url = `http://localhost:3000/api/ActualizarSalida/${$Lista.data[0].codasis}`;
@@ -102,6 +103,7 @@ function Entrada(codasig){
     
 }
 function Salida(codasig){
+    debugger
     var confirm = alertify.confirm('Asistencia', 'Quiere Marcar la Salida?', null, null).set('', { ok: 'ok', cancel: 'Cancel' });
     //callbak al pulsar botón positivo
     confirm.set('onok', function () {
@@ -160,6 +162,56 @@ async function lista(turno){
                         </div>
                         </div>`;
     }
+    function MateriaItemTemplateB(Lista){
+        return `<div class="card holl">
+        <div class="card-header">${Lista.lab}</div>
+                <div id="progra${Lista.codasig}" class="card-body asis">
+                <div class="datos">
+                        <h5>Nombre:</h5>
+                        <h6>${Lista.nombredoc}</h6>
+                        <h5>Materia:</h5>
+                        <h6>${Lista.nombremat}</h6>
+                        <h5>Cantidad de Estudiantes:</h5>
+                        <h6>${Lista.cant_estudiantes}</h6>
+                    </div>
+                    <figure>
+                        <img src="${Lista.foto}" alt="">
+                        
+                        </figure>
+                        
+                        </div>
+                        <div class="card-footer">
+                        <button id="botoningreso${Lista.codasig}" disabled class="btn ingreso" onclick="Entrada(${Lista.codasig});">Ingreso</button>
+                        <button id="botonsalida${Lista.codasig}"  class="btn Salida" onclick="Salida(${Lista.codasig});">Salida</button>
+                        <button class="btn Observaciones" onclick="">Observaciones</button>
+                        </div>
+                        </div>`;
+    }
+    function MateriaItemTemplateC(Lista){
+        return `<div class="card holl">
+        <div class="card-header">${Lista.lab}</div>
+                <div id="progra${Lista.codasig}" class="card-body">
+                <div class="datos">
+                        <h5>Nombre:</h5>
+                        <h6>${Lista.nombredoc}</h6>
+                        <h5>Materia:</h5>
+                        <h6>${Lista.nombremat}</h6>
+                        <h5>Cantidad de Estudiantes:</h5>
+                        <h6>${Lista.cant_estudiantes}</h6>
+                    </div>
+                    <figure>
+                        <img src="${Lista.foto}" alt="">
+                        
+                        </figure>
+                        
+                        </div>
+                        <div class="card-footer">
+                        <button id="botoningreso${Lista.codasig}" disabled class="btn ingreso" onclick="Entrada(${Lista.codasig});">Ingreso</button>
+                        <button id="botonsalida${Lista.codasig}" disabled class="btn Salida" onclick="Salida(${Lista.codasig});">Salida</button>
+                        <button class="btn Observaciones" onclick="">Observaciones</button>
+                        </div>
+                        </div>`;
+    }
     function createTemplate(HTMLString){
         const $html = document.implementation.createHTMLDocument();
         $html.body.innerHTML = HTMLString;
@@ -175,42 +227,60 @@ async function lista(turno){
         let $botoningreso = document.getElementById(`botoningreso${codasig}`)
         let $botonsalida = document.getElementById(`botonsalida${codasig}`)
         let $prog=document.getElementById(`progra${codasig}`)
-        $prog.classList.add('asis')
-        $botoningreso.disabled=true;
-        $botonsalida.disabled=false;
+        //$prog.classList.add('asis')
+        //$botoningreso.disabled=true;
+        //$botonsalida.disabled=false;
     }
     function conSalidaMarcada(codasig){
         let $botoningreso = document.getElementById(`botoningreso${codasig}`)
         let $botonsalida = document.getElementById(`botonsalida${codasig}`)
         let $prog=document.getElementById(`progra${codasig}`)
-        $prog.classList.remove('asis')
-        $botoningreso.disabled=true;
-        $botonsalida.disabled=true;
+        //$prog.classList.remove('asis')
+        //$botoningreso.disabled=true;
+        //$botonsalida.disabled=true;
     }
     
     async function renderMateriaList(Lista, $container){
         var t = new Date;
-        let fecha = `${t.getFullYear()}-${t.getMonth()+1}-${t.getDate()}`
+        let fecha = `${t.getFullYear()}-0${t.getMonth()+1}-${t.getDate()}`
         Lista.data.forEach(list => {
+            debugger
             async function prueba(){
                 const $asis= await getLista(`http://localhost:3000/api/obtenerAsisMarcada/${list.codasig}/${fecha}`);
-                if($asis.data[0].fecha.substr(0,10)==fecha){
-                    // alert('las fechas son iguales perro')
-                    if($asis.data[0].horasal=='00:00:00'){
-                        conIngresoMarcado(list.codasig)
+                debugger
+                if($asis.data[0]!=null){
+                    if($asis.data[0].fecha.substr(0,10)==fecha){
+                        // alert('las fechas son iguales perro')
+                        debugger
+                        if($asis.data[0].horasal=='00:00:00'){
+                            conIngresoMarcado(list.codasig)
+                            const HTMLString = MateriaItemTemplateB(list);
+                            const Lista = createTemplate(HTMLString);       
+                            $container.append(Lista);
+                        }else{
+                            conSalidaMarcada(list.codasig)
+                            const HTMLString = MateriaItemTemplateC(list);
+                            const Lista = createTemplate(HTMLString);       
+                            $container.append(Lista);
+                            
+                        }
                     }else{
-                        conSalidaMarcada(list.codasig)
+                        const HTMLString = MateriaItemTemplate(list);
+                        const Lista = createTemplate(HTMLString);       
+                        $container.append(Lista);
                         
                     }
+                    
                 }else{
+                    const HTMLString = MateriaItemTemplate(list);
+                    const Lista = createTemplate(HTMLString);       
+                    $container.append(Lista);
                     
                 }
+
                 debugger
             }
             prueba()
-            const HTMLString = MateriaItemTemplate(list);
-            const Lista = createTemplate(HTMLString);       
-            $container.append(Lista);
 
         });    
     }

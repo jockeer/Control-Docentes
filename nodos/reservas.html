@@ -31,18 +31,7 @@
                                 <li>
                                     <a href="turno1.html" class="" id="turno1"><span><img src="../img/subclock.png" alt=""></span>07:00 / 10:00</a>
                                 </li>
-                                <li>
-                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>10:15 / 12:45</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>13:00 / 15:45</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>16:00 / 18:45</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="" id=""><span><img src="../img/subclock.png" alt=""></span>19:00 / 21:45</a>
-                                </li>
+                               
     
                             </ul>
                 </li>
@@ -169,6 +158,39 @@
                         <h5>Requerimientos</h5>
                         <h6>Atlas Ti, Spss, Internet, Epi Data</h6>
                         <h5>Aula</h5>
+                        <h6>N-200</h6>
+                        <h5></h5>
+                        <div class="condicion">
+                            <button class="aprobar">Aprobar</button>
+                            <button class="reprobar">Rechazar</button>
+                        </div>
+                    </div>
+                    <img src="../img/Aprobado.png" alt="">   
+                </div>   
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Nombre Materia</h5>
+                    </div>
+                    <div class="card-body cardDocente">
+                        <h5>Docente</h5>
+                        <h6>Ramiro Muñoz Areldo</h6>
+                        <h5>Email</h5>
+                        <h6>ramiromendez@gmail.com</h6>
+                        <h5>Telefono</h5>
+                        <h6>76585852</h6>
+                        <h5>Modulo</h5>
+                        <h6>5</h6>
+                        <h5>Materia</h5>
+                        <h6>Investigacion de Mercados 2</h6>
+                        <h5>Horario</h5>
+                        <h6>10:15 / 13:00</h6>
+                        <h5>Fecha</h5>
+                        <h6>9,10,11,12,13,14,15,16,17,18,19,20</h6>
+                        <h5>Cantidad de Estudiantes</h5>
+                        <h6>15</h6>
+                        <h5>Requerimientos</h5>
+                        <h6>Atlas Ti, Spss, Internet, Epi Data</h6>
+                        <h5>Aula</h5>
                         <h6></h6>
                         <h5></h5>
                         <div class="condicion">
@@ -181,8 +203,174 @@
                 
             </div>
         </div>
-        <button id="btnAddDocente" class="btnNewDoc"><img src="../img/addDocente.png" alt=""></button>
+        <button type="button" class="btnNewDoc" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><img src="../img/addDocente.png" alt=""></button>
+        <!-- <button id="btnAddDocente" class="btnNewDoc"><img src="../img/addDocente.png" alt=""></button> -->
     </main>
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar Nueva Recerva</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Nombre del Docente</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPassword4">Email</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Telefono</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label  for="inputPassword4">Modulo</label>
+                        <select class="form-control" name="" id="">
+                            <option value="">Modulo 0</option>
+                            <option value="">Modulo 1</option>
+                            <option value="">Modulo 2</option>
+                            <option value="">Modulo 3</option>
+                            <option value="">Modulo 4</option>
+                            <option value="">Modulo 5</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress">Address</label>
+                      <select class="form-control" name="" id="">
+                        <option value="">Turno 1 - 07:15 / 10:00</option>
+                        <option value="">Turno 2 - 10:15 / 13:00</option>
+                        <option value="">Turno 3 - 13:15 / 16:00</option>
+                        <option value="">Turno 4 - 16:15 / 19:00</option>
+                        <option value="">Turno 5 - 19:15 / 21:45</option>
+                        
+                    </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Desde</label>
+                        
+                            <div class="containerMesA" style="display: grid;
+                            grid-template-columns: repeat(7,1fr);">
+                                <h6></h6>
+                                <h6></h6>
+                                <h6></h6>
+                                <h6></h6>
+                                <h6></h6>
+                                <h6 class="item">1</h6>
+                                <h6 class="item">2</h6>
+                                <h6 class="item">3</h6>
+                                <h6 class="item">4</h6>
+                                <h6 class="item">5</h6>
+                                <h6 class="item">6</h6>
+                                <h6 class="item">7</h6>
+                                <h6 class="item">8</h6>
+                                <h6 class="item">9</h6>
+                                <h6 class="item">10</h6>
+                                <h6 class="item">11</h6>
+                                <h6 class="item">12</h6>
+                                <h6 class="item">13</h6>
+                                <h6 class="item">14</h6>
+                                <h6 class="item">15</h6>
+                                <h6 class="item">16</h6>
+                                <h6 class="item">17</h6>
+                                <h6 class="item">18</h6>
+                                <h6 class="item">19</h6>
+                                <h6 class="item">20</h6>
+                                <h6 class="item">21</h6>
+                                <h6 class="item">22</h6>
+                                <h6 class="item">23</h6>
+                                <h6 class="item">24</h6>
+                                <h6 class="item">25</h6>
+                                <h6 class="item">26</h6>
+                                <h6 class="item">27</h6>
+                                <h6 class="item">28</h6>
+                                <h6 class="item">29</h6>
+                                <h6 class="item">30</h6>
+                                <h6 class="item">31</h6>
+                            </div>
+                        </div>
+                        <div style="border-left: 1px solid rgba(0,0,0,.1);" class="form-group col-md-6">
+                            <label for="inputPassword4">Hasta</label>
+                            <div class="containerMesB" style="display: grid;
+                            grid-template-columns: repeat(7,1fr);">
+                                <h6></h6>
+                                <h6></h6>
+                                <h6></h6>
+                                <h6></h6>
+                                <h6></h6>
+                                <h6 class="item">1</h6>
+                                <h6 class="item">2</h6>
+                                <h6 class="item">3</h6>
+                                <h6 class="item">4</h6>
+                                <h6 class="item">5</h6>
+                                <h6 class="item">6</h6>
+                                <h6 class="item">7</h6>
+                                <h6 class="item">8</h6>
+                                <h6 class="item">9</h6>
+                                <h6 class="item">10</h6>
+                                <h6 class="item">11</h6>
+                                <h6 class="item">12</h6>
+                                <h6 class="item">13</h6>
+                                <h6 class="item">14</h6>
+                                <h6 class="item">15</h6>
+                                <h6 class="item">16</h6>
+                                <h6 class="item">17</h6>
+                                <h6 class="item">18</h6>
+                                <h6 class="item">19</h6>
+                                <h6 class="item">20</h6>
+                                <h6 class="item">21</h6>
+                                <h6 class="item">22</h6>
+                                <h6 class="item">23</h6>
+                                <h6 class="item">24</h6>
+                                <h6 class="item">25</h6>
+                                <h6 class="item">26</h6>
+                                <h6 class="item">27</h6>
+                                <h6 class="item">28</h6>
+                                <h6 class="item">29</h6>
+                                <h6 class="item">30</h6>
+                                <h6 class="item">31</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">fechas Elegidas</label>
+                        <input type="text" id="fechasElegidas" class="form-control" disabled>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Cantidad de Alumnos</label>
+                            <input type="number" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Requerimientos</label>
+                            <textarea class="form-control" name="" id="" cols="15" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputAddress">Address</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <footer class="footer"></footer>
 
     <script src="../js/js/jquery-3.4.1.min.js"></script>
@@ -192,6 +380,7 @@
     <script src="../js/navegacionTurnos.js"></script>
     <script src="../js/reservas.js"></script>
     <script src="../js/ControlLogin.js"></script>
+    <script src="../js/calendario.js"></script>
 
 </body>
 </html>
